@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&family=Inter:wght@400;600;800&display=swap");
+:root { --bg:#0b0b14; --card:#14141f; --acc:#ff5c8a; --acc2:#7c5cff; --tx:#f2f2f7; --mut:#9a9ab0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: radial-gradient(circle at 20% 0%, #1c1030, var(--bg) 55%); color: var(--tx); font-family: Inter, "Noto Sans KR", sans-serif; line-height: 1.6; }
+.petals { position: fixed; inset: 0; pointer-events: none; z-index: 1; }
+.progress { position: fixed; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--acc), var(--acc2)); transform-origin: 0; z-index: 50; }
+.nav { position: fixed; top: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 16px 5vw; backdrop-filter: blur(12px); background: rgba(11,11,20,.6); z-index: 40; }
+.nav a { color: var(--mut); text-decoration: none; margin-left: 20px; transition: color .2s; }
+.nav a:hover { color: var(--acc); }
+.logo { font-weight: 900; font-size: 1.3rem; } .logo b { color: var(--acc); }
+.hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 0 8vw; position: relative; z-index: 2; }
+.tag { color: var(--acc); letter-spacing: .2em; text-transform: uppercase; font-size: .85rem; margin-bottom: 16px; }
+h1 { font-size: clamp(2.5rem, 8vw, 6rem); font-weight: 900; line-height: 1.1; }
+h1 span { background: linear-gradient(90deg, var(--acc), var(--acc2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.lead { color: var(--mut); max-width: 560px; margin: 20px 0 28px; font-size: 1.1rem; }
+.btn { align-self: flex-start; padding: 14px 28px; border-radius: 999px; background: linear-gradient(90deg, var(--acc), var(--acc2)); color: #fff; text-decoration: none; font-weight: 700; transition: transform .2s; }
+.btn:hover { transform: scale(1.06); }
+.sec { padding: 90px 8vw; position: relative; z-index: 2; }
+h2 { font-size: 2.4rem; margin-bottom: 28px; } h2 small { color: var(--acc); font-size: 1.2rem; margin-left: 10px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; }
+.card { background: var(--card); border: 1px solid #25253a; border-radius: 20px; padding: 26px; }
+.card:hover { border-color: var(--acc); box-shadow: 0 10px 40px rgba(255,92,138,.15); }
+.emoji { font-size: 2.6rem; } .card h3 { margin-top: 8px; display: inline; } .card p { color: var(--mut); margin-top: 8px; }
+.kr { color: var(--acc); margin-left: 8px; } .big-kr { font-size: 3rem; font-weight: 900; display: block; margin: 0 0 4px; }
+.hangul { display: grid; grid-template-columns: 1.4fr 1fr; gap: 24px; align-items: center; }
+.keys { display: grid; grid-template-columns: repeat(auto-fill, minmax(64px, 1fr)); gap: 10px; }
+.keys button { font-size: 1.6rem; padding: 14px 0; border-radius: 14px; border: 1px solid #25253a; background: var(--card); color: var(--tx); cursor: pointer; transition: all .2s; }
+.keys button:hover, .keys button.on { background: var(--acc); border-color: var(--acc); transform: translateY(-3px); }
+.big { background: var(--card); border-radius: 24px; padding: 30px; text-align: center; border: 1px solid var(--acc2); }
+.glyph { font-size: 6rem; font-weight: 900; color: var(--acc); }
+.namebox { margin-top: 36px; } .namebox label { display: block; color: var(--mut); margin-bottom: 8px; }
+.namebox input { width: 100%; max-width: 420px; padding: 14px 18px; border-radius: 14px; border: 1px solid #25253a; background: var(--card); color: var(--tx); font-size: 1rem; outline: none; }
+.namebox input:focus { border-color: var(--acc); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.chips span { padding: 8px 14px; border-radius: 10px; background: #1d1d2e; color: var(--mut); font-size: 1.3rem; }
+.chips span.hit { background: var(--acc2); color: #fff; }
+footer { text-align: center; padding: 50px 5vw; color: var(--mut); position: relative; z-index: 2; border-top: 1px solid #1d1d2e; }
+@media (max-width: 760px) { .hangul { grid-template-columns: 1fr; } .nav div a { margin-left: 10px; font-size: .85rem; } }
